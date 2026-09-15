@@ -1,44 +1,33 @@
-# Week 1: Introduction to Linux
+# Cybersecurity in Practice Labs
  
-**Subject:** CSE1CPR – Cybersecurity in Practice
-**Environment:** Kali Linux (VM), BASH shell
+Weekly lab documentation from **CSE1CPR – Cybersecurity in Practice**, a subject in my Bachelor of Cybersecurity at La Trobe University. Each week I work through a hands-on lab (Linux fundamentals, security tooling, CTF-style exercises) and document what I did, what I learned, and the commands/techniques involved.
  
-## Overview
+This repo is part of my portfolio as I work toward entry-level IT helpdesk and network engineer roles.
  
-This week covered Linux fundamentals — the file system, navigation, file management, and finding information — followed by practical application through the OverTheWire "Bandit" wargame, accessed via SSH into their training server.
+## Structure
  
-## What I did
+Each week has its own folder containing a README write-up (and screenshots where relevant):
  
-**File system navigation and management**
-Built and manipulated a nested test directory structure (`test-dir-10/test-subdir-A/test-subdir-B/...`) to practice absolute vs. relative paths. Used `ls`, `mkdir`, `cd`, `mv`, and `cp` to create, list, rename, and reorganise directories and files.
+```
+weeks/
+  week01-intro-to-linux/
+    README.md
+```
  
-**Finding and handling awkward files**
-Worked through several file-discovery and file-handling scenarios that come up often in Linux/security work:
-- Locating and reading a file whose name begins with a hyphen (`-`), which `cat` would otherwise misinterpret as a command flag — solved using the `./` prefix trick.
-- Reading a file with spaces in its name, which requires quoting the filename.
-- Finding a **hidden file** (dot-prefixed) using `ls -la`, since hidden files don't show in a normal directory listing.
-- Searching for files by exact size using `find -size` to track down a file that wasn't where expected, discovering it had actually been placed at a different (also hidden) path.
-**Bandit CTF (OverTheWire)**
-Connected to the Bandit wargame server over SSH and progressed through several levels, using each level's hints to locate the password needed to access the next. This put the day's commands into practice in a "find the hidden thing" format — reinforcing `ls -la`, `cat`, `find`, and handling special characters in filenames under realistic (if intentionally awkward) conditions.
+## Weeks covered
  
-> Note: Bandit passwords aren't included here — OverTheWire is shared infrastructure other learners use, and publishing solutions works against the point of the challenge.
- 
-## Commands practiced
- 
-| Command | Purpose |
+| Week | Topic |
 |---|---|
-| `pwd` | Show current absolute path |
-| `ls`, `ls -la` | List directory contents, including hidden files |
-| `mkdir` | Create directories |
-| `cd` | Change directory |
-| `mv` | Move / rename files and directories |
-| `cp` | Copy files |
-| `cat` | Print file contents to stdout |
-| `find -size` | Search for files by size |
-| `ssh` | Connect to a remote server (used to access Bandit) |
+| 1 | [Introduction to Linux](weeks/week01-intro-to-linux/README.md) — file system navigation, file management, finding files, intro to the Bandit CTF |
  
-## Key takeaways
+*(Updated as the subject progresses.)*
  
-- Filenames starting with `-` or containing spaces need special handling (`./` prefix or quoting) since the shell treats certain characters as syntax.
-- `ls -la` is essential for spotting hidden files — a detail that matters both operationally and in a security context (hiding data in plain sight).
+## Technologies / tools
+ 
+- Kali Linux (VM)
+- BASH shell
+- OverTheWire (Bandit wargame)
+## A note on academic integrity
+ 
+Where labs involve CTF-style challenges (e.g. OverTheWire), I document the **techniques and commands** used rather than posting flags, passwords, or full solutions — this keeps the challenges useful for others and respects the shared nature of that infrastructure.ally and in a security context (hiding data in plain sight).
 - `find` is a much more targeted tool than manually browsing when you know something about the file you're after (like its size) but not its name or location.
