@@ -18,7 +18,7 @@ weeks/
  
 | Week | Topic |
 |---|---|
-| 1 | [Introduction to Linux](weeks/week01-intro-to-linux/README.md) — file system navigation, file management, finding files, intro to the Bandit CTF |
+| 1 | [Introduction to Linux](week01-intro-to-linux/README.md) — file system navigation, file management, finding files, intro to the Bandit CTF |
  
 *(Updated as the subject progresses.)*
  
